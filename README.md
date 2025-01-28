@@ -8,13 +8,13 @@ We construct a math multiplication dataset for n-digit multiplication. Specifica
 
 ### Train a model to tell stories
 We are going to train the model on the tiny stories. Please open the link, download the TinyStories-train.txt file, and put it in your data folder like below.
-
+```
 HW4 /
 --| transformer.ipynb
 --| data /
 ----| TinyStories-train.txt
 ----| ...
-Here is one example: One day, a little girl wanted to paint. She went outside, and looked around. The grass was green, and the sky was blue. It was a mild day, so it was perfect for painting. The little girl began to paint, and she used all the colors from her box of paints. Red, yellow, and blue. She painted on the grass, and she made a beautiful picture. She painted flowers and birds, and she was very proud of her work. The sun was shining, so everything looked very bright. When she was finished, she stood up and looked at her painting. She felt very happy, because she had made something beautiful. She knew she would always remember this mild day and the painting she made on the grass. After this, run the code in the cell below to load the stories.
+```
 
 In early iterations, the model will not generate anything meaningful, but as you train the model for more iterations, you will gradually see some interesting stories. The stories can be imperfect because we are only running a small model, but it should generate real words mostly, and follow grammar rules to some extent. Feel free to run it for longer (increase max_iters) or make the model size larger if you have time and want better results, but the default setting should be good enough.
 
