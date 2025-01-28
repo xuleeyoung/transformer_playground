@@ -19,6 +19,7 @@ HW4 /
 In early iterations, the model will not generate anything meaningful, but as you train the model for more iterations, you will gradually see some interesting stories. The stories can be imperfect because we are only running a small model, but it should generate real words mostly, and follow grammar rules to some extent. Feel free to run it for longer (increase max_iters) or make the model size larger if you have time and want better results, but the default setting should be good enough.
 
 _Here are some generated texts during training_:
+
 **1. Iteration 501/15000: training loss 1.7922**
 - Story (1): 
 Once upon a time hin bom the motind, "I walle pat a and it, be a look too cher an to and the soul. They saw saw the their to proce to the ime to soma. She ad and trie it to boulte. She the a days to the whing so pok it. She they hownthin's to her. He der was was terir sarked tlit bootat ithat twe at fun it and ware forended she outher. Her did ad sallled and Tis the comeltele, "Doved buron, "Lily't, her she cacyir to but flig therat a shir shomed thid. The art bane, anve bry happy her was shey with belit fins flird thens in alllings theim in now toge soons. "Wan, hey as at goo therar, I downe aver the ats and and wat they cad bill theis, she sploot to tich becat igh thor they. He domm they dad bon the she said and shie. She aned the sort as in it then togart.
