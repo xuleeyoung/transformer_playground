@@ -1,16 +1,8 @@
-
-
 import math
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-def hello():
-    """
-    This is a sample function that we will try to import and run to ensure that
-    our environment is correctly set up on Google Colab.
-    """
-    print("Hello from transformer.py!")
 
 class MaskedAttention(nn.Module):
     # Masked/Causal Self-Attention
@@ -39,7 +31,6 @@ class MaskedAttention(nn.Module):
         Q, K, V  = self.attention(x).split(self.embedding_dim, dim=2)
         Q, K, V = self.split(Q), self.split(K), self.split(V)
         ###########################################################################
-        # TODO: Implement the masked attention network.                           #
         # Hint: Please refer to equation(1) in paper - Attention Is All You Need  #
         # link:  https://arxiv.org/pdf/1706.03762.pdf                             #
         #        which shows attention(Q, K, V) = softmax(QK^T/sqrt(d_K))V        #
@@ -47,7 +38,6 @@ class MaskedAttention(nn.Module):
         # However, we are implementing masked attention, therefore, before        #
         # softmax, call self.apply_mask(att) to apply causal mask.                #
         # i.e. att = softmax(self.apply_mask(QK^T/sqrt(d_K)))                     #
-        # please carefully take transpose and softmax on the correct dimensions.  #
         # Input shapes: Q, K, V (same shapes):                                    #
         #              [batch_size, num_head, sequence_len, embedding_dim/n_head] #
         # Output shape: att:                                                      #
@@ -57,9 +47,7 @@ class MaskedAttention(nn.Module):
         att /= math.sqrt(K.shape[-1])
         att = self.apply_mask(att)
         att = F.softmax(att, dim=-1)
-        ###########################################################################
-        #                             END OF YOUR CODE                            #
-        ###########################################################################
+
         y = self.drop1(att) @ V
         y = y.transpose(1, 2).reshape(x.size())
         y = self.drop2(self.fc(y))
